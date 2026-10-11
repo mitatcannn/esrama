@@ -1,0 +1,280 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    background: #210d29;
+}
+
+body {
+    position: relative;
+    isolation: isolate;
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    color: #fff5fb;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+/* Arka plan fotoğrafı */
+.arka-plan {
+    position: fixed;
+    z-index: -3;
+    inset: -20px;
+    background: url("foto.jpg") center / cover no-repeat;
+    filter: blur(18px);
+    transform: scale(1.08);
+}
+
+/* Arka plan karartması */
+.karartma {
+    position: fixed;
+    z-index: -2;
+    inset: 0;
+    background: linear-gradient(
+        150deg,
+        rgba(30, 6, 38, .80),
+        rgba(105, 15, 66, .82),
+        rgba(20, 5, 32, .94)
+    );
+}
+
+/* Etrafta yağan kalpler */
+#kalp-yagmuru {
+    position: fixed;
+    inset: 0;
+    z-index: 3;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Ana içerik */
+.final {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding:
+        max(24px, env(safe-area-inset-top))
+        20px
+        max(28px, env(safe-area-inset-bottom));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    text-align: center;
+}
+
+/* Pembe-altın fotoğraf çerçevesi */
+.kalpli-cerceve {
+    position: relative;
+    isolation: isolate;
+    width: min(82vw, 340px);
+    aspect-ratio: 4 / 5;
+    padding: 9px;
+    flex: 0 0 auto;
+
+    border: 2px solid #ffd5a6;
+    border-radius: 24px;
+
+    background: linear-gradient(
+        145deg,
+        #fff1f7,
+        #ff8fbd 45%,
+        #dca76b 100%
+    );
+
+    box-shadow:
+        0 0 0 5px rgba(255, 184, 215, .14),
+        0 0 0 7px rgba(255, 213, 166, .45),
+        0 12px 40px rgba(255, 73, 148, .35);
+
+    animation: cerceve-parla 2.5s ease-in-out infinite;
+}
+
+/* İç fotoğraf alanı */
+.foto-alani {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, .95);
+    border-radius: 16px;
+    background: #642443;
+}
+
+/* Fotoğraf */
+.sevgili-foto {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 13px;
+}
+
+/* Çerçeve köşelerindeki dekoratif kalpler */
+.kalpli-cerceve::before,
+.kalpli-cerceve::after {
+    position: absolute;
+    z-index: 2;
+    color: #fff0f7;
+    font-size: 25px;
+    line-height: 1;
+    text-shadow: 0 2px 8px #e52e79;
+    pointer-events: none;
+}
+
+.kalpli-cerceve::before {
+    content: "♥";
+    top: -13px;
+    left: -12px;
+}
+
+.kalpli-cerceve::after {
+    content: "♥";
+    right: -12px;
+    bottom: -10px;
+}
+
+/* Fotoğraf altındaki romantik mesaj */
+.foto-mesaji {
+    width: min(100%, 430px);
+    padding: 0 5px;
+    animation: mesaj-gelsin 1.2s ease both;
+}
+
+.foto-mesaji h1 {
+    margin: 0 0 16px;
+    color: #ffc0dc;
+    font-family: Georgia, serif;
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+    text-shadow: 0 0 18px #ff4f98aa;
+}
+
+.foto-mesaji p {
+    margin: 0 0 14px;
+    color: #fff0f7;
+    font-size: clamp(.98rem, 3.7vw, 1.08rem);
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+/* Son romantik mesaj */
+.son-kalp {
+    margin-top: 18px;
+    color: #ffb8d7;
+    font-family: Georgia, serif;
+    font-size: clamp(1.15rem, 4.5vw, 1.4rem);
+    font-weight: bold;
+}
+
+/* Çerçevenin yumuşak parlaması */
+@keyframes cerceve-parla {
+    0%, 100% {
+        box-shadow:
+            0 0 0 5px rgba(255, 184, 215, .14),
+            0 0 0 7px rgba(255, 213, 166, .45),
+            0 12px 35px rgba(255, 73, 148, .28);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 5px rgba(255, 184, 215, .22),
+            0 0 0 7px rgba(255, 213, 166, .7),
+            0 12px 45px rgba(255, 73, 148, .48);
+    }
+}
+
+/* Mesajın yumuşakça görünmesi */
+@keyframes mesaj-gelsin {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Düşen kalpler */
+.kayan-kalp {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    line-height: 1;
+    user-select: none;
+    will-change: transform;
+    animation: kalp-dus linear forwards;
+}
+
+@keyframes kalp-dus {
+    from {
+        transform: translate3d(0, -5vh, 0) rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate3d(var(--kayma), 112vh, 0)
+            rotate(var(--donus));
+    }
+}
+
+/* Küçük telefonlar */
+@media (max-width: 380px) {
+    .final {
+        gap: 16px;
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    .kalpli-cerceve {
+        width: min(82vw, 300px);
+    }
+
+    .foto-mesaji p {
+        line-height: 1.7;
+    }
+}
+
+/* Ekran yüksekliği az olan cihazlar */
+@media (max-height: 700px) {
+    .final {
+        gap: 12px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .kalpli-cerceve {
+        width: min(55vh, 260px);
+        width: min(55dvh, 260px);
+    }
+
+    .foto-mesaji h1 {
+        margin-bottom: 8px;
+        font-size: 1.7rem;
+    }
+
+    .foto-mesaji p {
+        margin-bottom: 8px;
+        font-size: .92rem;
+        line-height: 1.5;
+    }
+
+    .son-kalp {
+        margin-top: 8px;
+    }
+}
+
+/* Hareket azaltma tercihi */
+@media (prefers-reduced-motion: reduce) {
+    .kalpli-cerceve,
+    .foto-mesaji {
+        animation: none;
+    }
+}

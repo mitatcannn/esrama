@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff0f5">
+    <title>Sana bir mesajım var 💌</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <!-- İlk ekran: zarf -->
+        <section class="giris" id="giris">
+            <p class="ust-yazi">Sana özel bir şey hazırladım...</p>
+            <h1>Bir mesajın var 💌</h1>
+            <p class="ipucu">Mektubu açmak için kalbe dokun</p>
+
+            <button class="zarf" id="zarf" aria-label="Mektubu aç">
+                <span class="zarf-govde"></span>
+                <span class="zarf-kapak"></span>
+                <span class="zarf-kalp">❤️</span>
+            </button>
+
+            <p class="alt-ipucu">Senin için, kalbimden 💗</p>
+        </section>
+
+        <!-- Kalbe dokununca açılan mektup -->
+        <section class="mektup-bolumu" id="mektup" hidden>
+            <div class="mektup-kagit">
+                <div class="mektup-baslik">Güzelim, ❤️</div>
+
+                <!-- KENDİ MESAJINI BURAYA YAZ -->
+                <div class="mesaj">
+    <p>
+        Bazen bir insanın hayatına girmesi, her şeyi bu kadar
+        güzelleştirebilir mi diye düşünüyorum. Sonra seni
+        hatırlıyorum ve cevabımı buluyorum. İyi ki tanımışım
+        seni, iyi ki yollarımız kesişmiş. ❤️
+    </p>
+
+    <p>
+        Seninle konuşmak, sesini duymak, birlikte gülmek ve
+        küçücük anları bile güzelleştirmek benim için çok
+        değerli. Belki her şeyi kelimelerle anlatamam ama
+        bilmeni isterim ki sen benim için gerçekten özelsin.
+    </p>
+
+    <p>
+        Seninle daha çok anı biriktirmek, güzel günlerimizi
+        çoğaltmak, kötü günlerinde yanında olmak ve her
+        koşulda elini tutmak istiyorum. Çünkü mesele sadece
+        mutlu günlerde birlikte olmak değil; her şeye rağmen
+        birbirimizi seçebilmek. 💗
+    </p>
+
+    <p>
+        Bazen sana ne kadar değer verdiğimi anlatmaya
+        kelimeler yetmiyor. Ama yine de bilmeni istiyorum:
+        yüzündeki bir gülümseme bile benim günümü
+        güzelleştirmeye yetiyor. 🥹
+    </p>
+
+    <p>
+        Belki bu küçük mektup sana hissettiklerimin tamamını
+        anlatamaz ama kalbimdeki yerini bilmeni istedim.
+        Seninle güzel bir başlangıç yapmak ve bu hikâyenin
+        her sayfasını birlikte yazmak istiyorum. ❤️
+    </p>
+
+    <div class="akrostis">
+        <h3>ESRA'MA BİR AKROSTİŞ 🌹</h3>
+
+        <p><strong>E</strong>n güzel tesadüfüm, kalbime iyi gelenimsin.</p>
+        <p><strong>S</strong>eninle sıradan günler bile güzelleşiyor.</p>
+        <p><strong>R</strong>üyalarımı süsleyen en güzel ihtimalsin.</p>
+        <p><strong>A</strong>klımda, kalbimde ve dualarımda yerin var.</p>
+    </div>
+
+    <p>
+        Sana verebileceğim en güzel şey, içtenliğim ve
+        sevgim. Seni daha çok tanımak, birlikte büyümek
+        ve her gün yeniden iyi ki demek istiyorum. 💕
+    </p>
+
+    <p class="soru">
+        Benimle çıkar mısın? 🥹💗
+    </p>
+</div>
+
+                <div class="kaydir-ipucu">
+                    Biraz aşağı kaydır, sana bir sorum var 💕
+                    <span>↓</span>
+                </div>
+
+                <div class="cevaplar">
+                    <a class="evet-btn" href="evet.html">
+                        EVET 💖
+                    </a>
+
+                    <button class="hayir-btn" id="hayirBtn" type="button">
+                        Hayır 🙈
+                    </button>
+                </div>
+
+                <p class="hayir-mesaji" id="hayirMesaji" hidden>
+                    Bu buton biraz utanıyor galiba 🙈💗
+                </p>
+
+                <p class="imza">Seni düşünen birinden... 💌</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
